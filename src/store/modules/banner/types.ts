@@ -1,0 +1,3 @@
+export const SET_BANNERS = 'SET_BANNERS'
+export const DELETE_BANNER = 'DELETE_BANNER'
+export const UPDATE_BANNERS = 'UPDATE_BANNERSS'

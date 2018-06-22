@@ -1,0 +1,3 @@
+export const SET_CONTENT = 'SET_CONTENT'
+export const DELETE_CONTENT = 'DELETE_CONTENT'
+export const ADD_CONTENTS = 'ADD_CONTENTS'
