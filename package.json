@@ -1,8 +1,8 @@
 {
-  "name": "xiaomahui-admin",
+  "name": "simple-vue-components",
   "version": "1.0.0",
-  "description": "xiaomahui admin",
-  "author": "zhoujiang <zhoujiang@zhaozhi.me>",
+  "description": "simple-vue-components",
+  "author": "aboutqx <aboutqx@163.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

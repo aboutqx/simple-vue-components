@@ -9,12 +9,11 @@
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 @Component
 export default class MaskDialog extends Vue {
-  @Prop() visible = false
+  @Prop() maskVisible
   mask: HTMLElement
-  @Watch('visible')
-  onvisibleChanged(val: boolean, oldVal: boolean) {
+  @Watch('maskVisible')
+  onMaskVisibleChanged(val: boolean, oldVal: boolean) {
     if (val && !oldVal) {
-      this.$emit('open')
       this.mask = document.querySelector('.mask') || document.createElement('div')
       this.mask.classList.add('mask')
       document.querySelector('.mask') || document.body.appendChild(this.mask)
@@ -22,19 +21,18 @@ export default class MaskDialog extends Vue {
       this.$el.classList.add('show')
     }
   }
-  created() {
+  created () {
     this._hideDialog = this._hideDialog.bind(this)
   }
-  mounted() {
+  mounted () {
     this.$el.addEventListener('click', this._hideDialog)
   }
-  _hideDialog(e) {
+  _hideDialog (e) {
     if (!e.target.classList.contains('mask-dialog')) return
     document.body.removeChild(this.mask)
     this.$el.classList.remove('show')
 
-    this.$emit('update:visible', false)
-    this.$emit('close')
+    this.$emit('update:maskVisible', false)
     // document.body.style.overflow = 'auto'
   }
   destroyed() {}
@@ -72,9 +70,9 @@ export default class MaskDialog extends Vue {
   opacity: 0.5;
   background: #000;
   z-index: 99;
-  animation: fadeIn 0.4s;
+  animation: mask-fade-in 0.4s;
 }
-@keyframes fadeIn {
+@keyframes mask-fade-in {
   from {
     opacity: 0;
     transform: scale(1.05);
