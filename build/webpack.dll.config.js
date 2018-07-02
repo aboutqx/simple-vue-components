@@ -12,8 +12,8 @@ module.exports = {
       'element-ui'
     ]
   },
-  // mode: 'production',
-  mode: 'development',
+  mode: 'production',
+  // mode: 'development',
   output: {
     path: path.join(__dirname, '../static/js'),
     filename: '[name].dll.js',
