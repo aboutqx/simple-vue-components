@@ -5,4 +5,4 @@ vue components
 
 *webpack-dll-plugin
 
-
+*not overhead,easy to reuse
